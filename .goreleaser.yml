@@ -1,7 +1,7 @@
-project_name: terraform-provider-fortiappseccloud
+project_name: terraform-provider-example
 
 builds:
-  - id: terraform-provider-fortiappseccloud
+  - id: terraform-provider-example
     main: main.go
     goos:
       - linux
@@ -36,8 +36,8 @@ signs:
 
 release:
   github:
-    owner: fortinet
-    name: terraform-provider-fortiappseccloud
+    owner: Yuchen-Fortinet
+    name: terraform-provider-example
     draft: false
 
 snapshot:
