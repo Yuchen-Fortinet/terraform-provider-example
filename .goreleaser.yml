@@ -1,3 +1,5 @@
+version: 2
+
 project_name: terraform-provider-example
 
 builds:
@@ -18,7 +20,8 @@ builds:
       - name: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
 
 archives:
-  - format: zip
+  - id: default
+    format: zip
     name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
     files:
       - LICENSE
@@ -31,7 +34,8 @@ checksum:
     - glob: "terraform-registry-manifest.json"
 
 signs:
-  - artifacts: checksum
+  - id: checksum-sign
+    artifacts: checksum
     args: ["--detach-sign"]
 
 release:
